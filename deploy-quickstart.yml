@@ -76,6 +76,45 @@ objects:
             name: 'tomcat:jdk8-openjdk'
         type: ImageChange
 ################################################################################
+#                                Tomcat Service                                #
+################################################################################
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: '2019-11-24T23:40:13Z'
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-tomcat
+  spec:
+    ports:
+      - name: 8080-tcp
+        port: 8080
+        protocol: TCP
+        targetPort: 8080
+    selector:
+      deploymentconfig: ${CUSTOMER_ID}-deploy-tomcat
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+  loadBalancer: {}
+################################################################################
+#                                Tomcat Route                                  #
+################################################################################
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-tomcat
+  spec:
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name:  ${CUSTOMER_ID}-tomcat
+      weight: 100
+    wildcardPolicy: None
+################################################################################
 #                       Jenkins Deployment Configuration                       #
 ################################################################################
 - apiVersion: apps.openshift.io/v1
@@ -146,7 +185,7 @@ objects:
   metadata:
     labels:
       app: ${CUSTOMER_ID}
-    name: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-jenkins
   spec:
     ports:
       - name: 8080-tcp
@@ -171,13 +210,13 @@ objects:
   metadata:
     labels:
       app: ${CUSTOMER_ID}
-    name: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-jenkins
   spec:
     port:
       targetPort: 8080-tcp
     to:
       kind: Service
-      name: ${CUSTOMER_ID}
+      name: ${CUSTOMER_ID}-jenkins
       weight: 100
     wildcardPolicy: None     
 ################################################################################

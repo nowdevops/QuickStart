@@ -29,10 +29,7 @@ objects:
     lookupPolicy:
       local: false
     tags:
-      - annotations:
-          openshift.io/generated-by: OpenShiftWebConsole
-          openshift.io/imported-from: 'tomcat:jdk8-openjdk'
-        from:
+      - from:
           kind: DockerImage
           name: 'tomcat:jdk8-openjdk'
         importPolicy: {}
@@ -45,7 +42,6 @@ objects:
 - apiVersion: image.openshift.io/v1
   kind: ImageStream
   metadata:
-    generation: 2
     labels:
       app: quickstart
     name: jenkins
@@ -53,13 +49,9 @@ objects:
     lookupPolicy:
       local: false
     tags:
-      - annotations:
-          openshift.io/generated-by: OpenShiftWebConsole
-          openshift.io/imported-from: 'jenkins/jenkins:lts-centos'
-        from:
+      - from:
           kind: DockerImage
           name: 'jenkins/jenkins:lts-centos'
-        generation: 2
         importPolicy: {}
         name: lts-centos
         referencePolicy:

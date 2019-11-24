@@ -17,31 +17,6 @@ metadata:
     tags: servicenow
 objects:
 ###############################################################################
-#                             Jenkins Image Stream                            #
-###############################################################################
-- apiVersion: image.openshift.io/v1
-  kind: ImageStream
-  metadata:
-    generation: 2
-    labels:
-      app: quickstart
-    name: jenkins
-  spec:
-    lookupPolicy:
-      local: false
-    tags:
-      - annotations:
-          openshift.io/generated-by: OpenShiftWebConsole
-          openshift.io/imported-from: 'jenkins/jenkins:lts-centos'
-        from:
-          kind: DockerImage
-          name: 'jenkins/jenkins:lts-centos'
-        generation: 2
-        importPolicy: {}
-        name: lts-centos
-        referencePolicy:
-          type: Source
-###############################################################################
 #                             Tomcat Image Stream                            #
 ###############################################################################
 - apiVersion: image.openshift.io/v1
@@ -65,4 +40,29 @@ objects:
         importPolicy: {}
         name: jdk8-openjdk
         referencePolicy:
-          type: Source        
+          type: Source    
+###############################################################################
+#                             Jenkins Image Stream                            #
+###############################################################################
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    generation: 2
+    labels:
+      app: quickstart
+    name: jenkins
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+      - annotations:
+          openshift.io/generated-by: OpenShiftWebConsole
+          openshift.io/imported-from: 'jenkins/jenkins:lts-centos'
+        from:
+          kind: DockerImage
+          name: 'jenkins/jenkins:lts-centos'
+        generation: 2
+        importPolicy: {}
+        name: lts-centos
+        referencePolicy:
+          type: Source    

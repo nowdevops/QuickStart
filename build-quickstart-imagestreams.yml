@@ -22,7 +22,6 @@ objects:
 - apiVersion: image.openshift.io/v1
   kind: ImageStream
   metadata:
-    generation: 2
     labels:
       app: quickstart
     name: tomcat
@@ -36,7 +35,6 @@ objects:
         from:
           kind: DockerImage
           name: 'tomcat:jdk8-openjdk'
-        generation: 2
         importPolicy: {}
         name: jdk8-openjdk
         referencePolicy:

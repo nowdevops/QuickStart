@@ -17,6 +17,65 @@ metadata:
     tags: servicenow
 objects:
 ################################################################################
+#                       Tomcat Deployment Configuration                       #
+################################################################################
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-deploy-tomcat
+  spec:
+    replicas: 1
+    selector:
+      app: ${CUSTOMER_ID}
+      deploymentconfig: ${CUSTOMER_ID}-deploy-tomcat
+    strategy:
+      activeDeadlineSeconds: 21600
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        labels:
+          app: ${CUSTOMER_ID}
+          deploymentconfig: ${CUSTOMER_ID}-deploy-tomcat
+      spec:
+        containers:
+          - image: 'tomcat'
+            imagePullPolicy: IfNotPresent
+            name: ${CUSTOMER_ID}-tomcat
+            ports:
+              - containerPort: 8080
+                protocol: TCP
+            resources:
+              limits:
+                memory: ${TOMCAT_MEMORY_LIMIT}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccountName: triton
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+      - type: ConfigChange
+      - imageChangeParams:
+          automatic: true
+          containerNames:
+            - ${CUSTOMER_ID}-tomcat
+          from:
+            kind: ImageStreamTag
+            name: 'tomcat:jdk8-openjdk'
+        type: ImageChange
+################################################################################
 #                       Jenkins Deployment Configuration                       #
 ################################################################################
 - apiVersion: apps.openshift.io/v1
@@ -45,7 +104,7 @@ objects:
         containers:
           - image: 'jenkins'
             imagePullPolicy: IfNotPresent
-            name: ${CUSTOMER_ID}
+            name: ${CUSTOMER_ID}-jenkins
             ports:
               - containerPort: 8080
                 protocol: TCP
@@ -74,7 +133,7 @@ objects:
       - imageChangeParams:
           automatic: true
           containerNames:
-            - ${CUSTOMER_ID}
+            - ${CUSTOMER_ID}-jenkins
           from:
             kind: ImageStreamTag
             name: 'jenkins:lts-centos'
@@ -129,6 +188,11 @@ parameters:
   description: Customer ID (e.g. acme)
   displayName: Customer ID
   required: true
+- name: TOMCAT_MEMORY_LIMIT
+  description: Maximum amount of memory the Tomcat container can use.
+  displayName: Tomcat Memory Limit
+  required: true
+  value: 1Gi  
 - name: JENKINS_MEMORY_LIMIT
   description: Maximum amount of memory the Jenkins container can use.
   displayName: Jenkins Memory Limit

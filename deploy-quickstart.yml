@@ -1,0 +1,136 @@
+###############################################################################
+#                         Quickstart Deployment Template                      #
+###############################################################################
+apiVersion: template.openshift.io/v1
+kind: Template
+message: Deploy Quickstart complete
+metadata:
+  labels:
+    template: deploy-quickstart
+  name: deploy-quickstart
+  annotations:
+    description: Deploy Quickstart
+    openshift.io/display-name: Deploy Quickstart
+    openshift.io/long-description: Deploy Quickstart
+    openshift.io/provider-display-name: ServiceNow
+    openshift.io/support-url: https://github.com/advlab/triton
+    tags: servicenow
+objects:
+################################################################################
+#                       Jenkins Deployment Configuration                       #
+################################################################################
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-deploy-jenkins
+  spec:
+    replicas: 1
+    selector:
+      app: ${CUSTOMER_ID}
+      deploymentconfig: ${CUSTOMER_ID}-deploy-jenkins
+    strategy:
+      activeDeadlineSeconds: 21600
+      resources: {}
+      recreateParams:
+        timeoutSeconds: 600
+      type: Recreate
+    template:
+      metadata:
+        labels:
+          app: ${CUSTOMER_ID}
+          deploymentconfig: ${CUSTOMER_ID}-deploy-jenkins
+      spec:
+        containers:
+          - image: 'jenkins'
+            imagePullPolicy: IfNotPresent
+            name: ${CUSTOMER_ID}
+            ports:
+              - containerPort: 8080
+                protocol: TCP
+              - containerPort: 50000
+                protocol: TCP
+            resources:
+              limits:
+                memory: ${JENKINS_MEMORY_LIMIT}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+              - mountPath: /var/jenkins_home
+                name: jenkins-1
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccountName: triton
+        terminationGracePeriodSeconds: 30
+        volumes:
+          - emptyDir: {}
+            name: jenkins-1
+    test: false
+    triggers:
+      - type: ConfigChange
+      - imageChangeParams:
+          automatic: true
+          containerNames:
+            - ${CUSTOMER_ID}
+          from:
+            kind: ImageStreamTag
+            name: 'jenkins:lts-centos'
+        type: ImageChange
+################################################################################
+#                               Jenkins Service                                #
+################################################################################
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}
+  spec:
+    ports:
+      - name: 8080-tcp
+        port: 8080
+        protocol: TCP
+        targetPort: 8080
+      - name: 50000-tcp
+        port: 50000
+        protocol: TCP
+        targetPort: 50000
+    selector:
+      deploymentconfig: ${CUSTOMER_ID}-deploy-jenkins
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}        
+################################################################################
+#                                Jenkins Route                                 #
+################################################################################
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}
+  spec:
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: ${CUSTOMER_ID}
+      weight: 100
+    wildcardPolicy: None     
+################################################################################
+#                            Template Parameters                               #
+################################################################################
+parameters:
+- name: CUSTOMER_ID
+  description: Customer ID (e.g. acme)
+  displayName: Customer ID
+  required: true
+- name: JENKINS_MEMORY_LIMIT
+  description: Maximum amount of memory the Jenkins container can use.
+  displayName: Jenkins Memory Limit
+  required: true
+  value: 1Gi

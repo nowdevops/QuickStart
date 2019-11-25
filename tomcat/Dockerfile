@@ -3,8 +3,7 @@
 ################################################################################
 
 FROM tomcat:jdk8-openjdk
-MAINTAINER The TRITON Project <noreply@nowhere.com>
-LABEL version="release-0.1.0" description="TRITON Tomcat Pod"
+LABEL maintainer="TRITON <ITX-NOW@servicenow.onmicrosoft.com>"
 
 # Declare the default shell
 SHELL ["/bin/bash", "-c"]

@@ -3,8 +3,7 @@
 ################################################################################
 
 FROM jenkins/jenkins:lts-centos
-MAINTAINER The TRITON Project <noreply@nowhere.com>
-LABEL version="release-0.1.0" description="TRITON Jenkins Pod"
+LABEL maintainer="TRITON <ITX-NOW@servicenow.onmicrosoft.com>"
 
 # Run as root
 USER root

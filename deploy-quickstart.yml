@@ -48,8 +48,10 @@ objects:
       spec:
         containers:
           - env:
+              - name: TOMCAT_USER
+                value: ${TOMCAT_USER}
               - name: TOMCAT_PASSWORD
-                value: ${TOMCAT_PASSWORD}
+                value: ${TOMCAT_PASSWORD}                
             image: 'tomcat'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-tomcat

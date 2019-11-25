@@ -14,3 +14,6 @@ COPY tomcat/container/ /
 
 # Expose Ports
 EXPOSE 8080
+
+# Configure Docker entry point script
+CMD ["docker-entrypoint.sh","start"]

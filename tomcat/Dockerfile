@@ -9,13 +9,6 @@ LABEL version="release-0.1.0" description="TRITON Tomcat Pod"
 # Declare the default shell
 SHELL ["/bin/bash", "-c"]
 
-# Install Toos
-RUN \
-  apt-get -qq update
-
-# Default to UTF-8 file.encoding
-ENV LC_ALL en_US.UTF-8
-
 # Copy Jenkins files to contaner
 COPY tomcat/container/ /
 

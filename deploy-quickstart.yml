@@ -148,8 +148,8 @@ objects:
           - env:
               - name: JENKINS_USER
                 value: ${JENKINS_USER}
-              - name: JENKINS_PASS
-                value: ${JENKINS_PASS}                            
+              - name: JENKINS_PASSWORD
+                value: ${JENKINS_PASSWORD}                            
               - name: GITHUB_ID
                 value: ${GITHUB_ID}
               - name: TOMCAT_USER

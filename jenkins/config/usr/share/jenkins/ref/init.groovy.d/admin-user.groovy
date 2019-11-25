@@ -15,7 +15,7 @@ if(!(jenkins.getAuthorizationStrategy() instanceof GlobalMatrixAuthorizationStra
     jenkins.setAuthorizationStrategy(new GlobalMatrixAuthorizationStrategy())
 
 // Create User
-def user = jenkins.getSecurityRealm().createAccount(env.JENKINS_USER, env.JENKINS_PASS)
+def user = jenkins.getSecurityRealm().createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
 user.save()
 
 // Set User as Jenkins Administrator

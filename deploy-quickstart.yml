@@ -159,7 +159,7 @@ objects:
             image: 'jenkins'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins
-            ports:
+            ports:    
               - containerPort: 8080
                 protocol: TCP
               - containerPort: 50000
@@ -242,14 +242,31 @@ parameters:
   description: Customer ID (e.g. acme)
   displayName: Customer ID
   required: true
+- name: GITHUB_ID
+  description: GitHub ID (e.g. dsmith)
+  displayName: GitHub ID
+  required: true
+  value: devopsmaniac  
 - name: TOMCAT_USER
   description: Tomcat User (e.g. admin)
   displayName: Tomcat User
-  required: true  
+  required: true
+  value: admin
 - name: TOMCAT_PASSWORD
   description: Tomcat Password (e.g. changeit)
   displayName: Tomcat Password
   required: true
+  value: changeit
+- name: JENKINS_USER
+  description: Jenkins User (e.g. admin)
+  displayName: Jenkins User
+  required: true
+  value: admin
+- name: JENKINS_PASSWORD
+  description: Tomcat Password (e.g. changeit)
+  displayName: Tomcat Password
+  required: true
+  value: changeit
 - name: TOMCAT_MEMORY_LIMIT
   description: Maximum amount of memory the Tomcat container can use.
   displayName: Tomcat Memory Limit

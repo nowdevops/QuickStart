@@ -58,3 +58,56 @@ objects:
         allowEnv: true
   status:
     lastVersion: 0
+###############################################################################
+#                               Build Jenkins Image                           #
+###############################################################################
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      template.alpha.openshift.io/wait-for-ready: 'true'
+    labels:
+      template: build-jenkins-image
+    name: build-jenkins-image
+  spec:
+    resources:
+      requests:
+        cpu: "1000m"
+        memory: "4Gi"
+      limits:
+        cpu: "1000m"
+        memory: "4Gi"
+    output:
+      to:
+        kind: ImageStreamTag
+        name: jenkins:lts-centos
+    source:
+      git:
+        uri: ssh://git@github.com/advlab/triton.git
+        ref: bravo
+      sourceSecret:
+        name: github-triton
+      type: Git
+    strategy:
+      type: Docker
+      dockerStrategy:
+        dockerfilePath: jenkins/Dockerfile
+        env:
+          - name: JENKINS_VERSION
+            value: ${JENKINS_VERSION}                
+    triggers:
+    - type: Generic
+      generic:
+        secret: github-triton
+        allowEnv: true
+  status:
+    lastVersion: 0    
+################################################################################
+#                            Template Parameters                               #
+################################################################################
+parameters:
+- name: JENKINS_VERSION
+  description: Jenkins Version
+  displayName: Jenkins Version
+  value: 2.190.2
+  required: true    

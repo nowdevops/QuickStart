@@ -143,7 +143,10 @@ objects:
           deploymentconfig: ${CUSTOMER_ID}-deploy-jenkins
       spec:
         containers:
-          - image: 'jenkins'
+          - env:
+              - name: GITHUB_ID
+                value: ${GITHUB_ID}
+            image: 'jenkins'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins
             ports:

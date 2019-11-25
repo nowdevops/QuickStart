@@ -10,4 +10,4 @@ LABEL version="release-0.1.0" description="TRITON Tomcat Pod"
 COPY tomcat/container/ .
 
 # Expose Ports
-EXPOSE  8080 50000
+EXPOSE 8080

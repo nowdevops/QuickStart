@@ -43,7 +43,7 @@ objects:
     source:
       git:
         uri: ssh://git@github.com/advlab/triton.git
-        ref: master
+        ref: bravo
       sourceSecret:
         name: github-triton
       type: Git

@@ -20,13 +20,7 @@ ENV JENKINS_JOBS $JENKINS_SHARE/ref/jobs
 RUN \
   yum install -y --nogpgcheck wget zip htop
 
-# Declare Jenkins Admin User
-ENV JENKINS_USER admin
-ENV JENKINS_PASS changeit
-
 # Declare Jenkins Build Args
-ARG GITHUB_ID
-ENV GITHUB_ID ${GITHUB_ID}
 ARG JENKINS_VERSION
 ENV JENKINS_VERSION ${JENKINS_VERSION}
 

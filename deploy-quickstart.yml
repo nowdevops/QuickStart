@@ -146,6 +146,10 @@ objects:
       spec:
         containers:
           - env:
+              - name: JENKINS_USER
+                value: ${JENKINS_USER}
+              - name: JENKINS_PASS
+                value: ${JENKINS_PASS}                            
               - name: GITHUB_ID
                 value: ${GITHUB_ID}
               - name: TOMCAT_USER

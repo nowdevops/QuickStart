@@ -10,7 +10,7 @@ LABEL version="release-0.1.0" description="TRITON Tomcat Pod"
 SHELL ["/bin/bash", "-c"]
 
 # Copy Jenkins files to container
-COPY tomcat/container/ /
+COPY tomcat/config/ /
 
 # Expose Ports
 EXPOSE 8080

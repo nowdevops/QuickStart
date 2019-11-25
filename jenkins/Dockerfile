@@ -10,7 +10,7 @@ LABEL version="release-0.1.0" description="TRITON Jenkins Pod"
 USER root
 
 # Copy Jenkins files to contaner
-COPY jenkins/container/ .
+COPY jenkins/config/ /
 
 # Set enviroment
 ENV JENKINS_SHARE /usr/share/jenkins

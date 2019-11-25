@@ -1,0 +1,60 @@
+###############################################################################
+#                        Quickstart Image Builder Template                    #
+###############################################################################
+apiVersion: v1
+kind: Template
+message: Quickstart Image Builder is complete
+metadata:
+  labels:
+    template: build-quickstart-images
+  name: build-quickstart-images
+  annotations:
+    description: Quickstart Image Builder Template
+    iconClass: icon-jenkins
+    openshift.io/display-name: Quickstart Image Builder Template
+    openshift.io/long-description: Quickstart Image Builder Template
+    openshift.io/provider-display-name: ServiceNow
+    openshift.io/support-url: https://github.com/advlab/triton
+    tags: servicenow
+objects:
+###############################################################################
+#                              Build Tomcat Image                             #
+###############################################################################
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      template.alpha.openshift.io/wait-for-ready: 'true'
+    labels:
+      template: build-tomcat-image
+    name: build-tomcat-image
+  spec:
+    resources:
+      requests:
+        cpu: "1000m"
+        memory: "4Gi"
+      limits:
+        cpu: "1000m"
+        memory: "4Gi"
+    output:
+      to:
+        kind: ImageStreamTag
+        name: tomcat:jdk8-openjdk
+    source:
+      git:
+        uri: ssh://git@github.com/advlab/triton.git
+        ref: master
+      sourceSecret:
+        name: github-triton
+      type: Git
+    strategy:
+      type: Docker
+      dockerStrategy:
+        dockerfilePath: tomcat/Dockerfile
+    triggers:
+    - type: Generic
+      generic:
+        secret: github-triton
+        allowEnv: true
+  status:
+    lastVersion: 0

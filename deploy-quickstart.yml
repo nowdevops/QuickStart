@@ -47,7 +47,10 @@ objects:
           deploymentconfig: ${CUSTOMER_ID}-deploy-tomcat
       spec:
         containers:
-          - image: 'tomcat'
+          - env:
+              - name: TOMCAT_PASSWORD
+                value: ${TOMCAT_PASSWORD}
+            image: 'tomcat'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-tomcat
             ports:
@@ -225,6 +228,10 @@ parameters:
 - name: CUSTOMER_ID
   description: Customer ID (e.g. acme)
   displayName: Customer ID
+  required: true
+- name: TOMCAT_PASSWORD
+  description: Tomcat Password (e.g. changeit)
+  displayName: Tomcat Password
   required: true
 - name: TOMCAT_MEMORY_LIMIT
   description: Maximum amount of memory the Tomcat container can use.

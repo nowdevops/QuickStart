@@ -42,7 +42,7 @@ RUN \
   chmod -R 775 $JENKINS_HOME  $JENKINS_SHARE
 
 # Expose Supercontainer Ports
-EXPOSE 80 8080 50000
+EXPOSE 8080 50000
 
 # Create Volumes
 VOLUME ["$JENKINS_HOME"]

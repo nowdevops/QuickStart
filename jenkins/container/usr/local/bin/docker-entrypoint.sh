@@ -33,18 +33,18 @@ log() {
   echo "[$(date --rfc-3339=seconds)]: $*"
 }
 
-configurejobs() {
+configure() {
 
   if [ ! -e $LOCKFILE ]; then
 
-    log "Configuring Jobs"
+    log "Configuring Jenkins"
 
     [[ -z "$GITHUB_ID" ]] && { echo "Error: GITHUB_ID not found"; exit 1; }
     
     # Run sed to repace GitHub Username
     sed -i -e "s#GITHUBUSERNAME#$GITHUB_ID#g" $JENKINS_JOBS/*.xml
 
-    # Job 1
+     # Job 1
     JOB_NAME=CorpSite-CI
     JOB_FILE=CorpSiteCI.xml
     mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml.override
@@ -67,24 +67,15 @@ configurejobs() {
     # Set the lock
     touch $LOCKFILE
 
-    log "Jobs configured"
+    log "Jenkins configured"
   else
-		log "Jobs already configured"
+		log "Jenkins already configured"
 	fi
 	return 0
 
 }  
 
-installtools() {
-	log "Installing Tools"
-  cd $JENKINS_HOME
-	curl -s "https://get.sdkman.io" | bash
-  source $JENKINS_HOME/.sdkman/bin/sdkman-init.sh
-  # Install Maven
-  sdk install maven 3.6.0
-}
-
-startjenkins() {
+startall() {
 	log "Starting Jenkins with a $CLI_DELAY sec delay"
 	delay $CLI_DELAY
 	cd $JENKINS_HOME
@@ -126,9 +117,8 @@ usage() {
 
 case $1 in
 start)
-  installtools
-  configurejobs
-  startjenkins
+  configure
+  startall
 ;; 
 *)
   usage

@@ -146,6 +146,10 @@ objects:
           - env:
               - name: GITHUB_ID
                 value: ${GITHUB_ID}
+              - name: TOMCAT_USER
+                value: ${TOMCAT_USER}
+              - name: TOMCAT_PASSWORD
+                value: ${TOMCAT_PASSWORD}
             image: 'jenkins'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins

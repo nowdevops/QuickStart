@@ -2,7 +2,7 @@
 #                     Jenkins & Tomcat Docker Supercontainer                   #
 ################################################################################
 
-FROM tomcat/tomcat:jdk8-openjdk
+FROM tomcat:jdk8-openjdk
 MAINTAINER The TRITON Project <noreply@nowhere.com>
 LABEL version="release-0.1.0" description="TRITON Tomcat Pod"
 

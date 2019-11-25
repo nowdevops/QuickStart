@@ -81,7 +81,6 @@ objects:
 - apiVersion: v1
   kind: Service
   metadata:
-    creationTimestamp: '2019-11-24T23:40:13Z'
     labels:
       app: ${CUSTOMER_ID}
     name: ${CUSTOMER_ID}-tomcat

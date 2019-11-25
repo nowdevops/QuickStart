@@ -3,6 +3,7 @@ branch-api
 build-pipeline-plugin
 build-timeout
 credentials-binding
+deploy
 email-ext
 github-api
 github-organization-folder

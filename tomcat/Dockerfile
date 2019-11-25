@@ -9,7 +9,7 @@ LABEL version="release-0.1.0" description="TRITON Tomcat Pod"
 # Declare the default shell
 SHELL ["/bin/bash", "-c"]
 
-# Copy Jenkins files to contaner
+# Copy Jenkins files to container
 COPY tomcat/container/ /
 
 # Expose Ports

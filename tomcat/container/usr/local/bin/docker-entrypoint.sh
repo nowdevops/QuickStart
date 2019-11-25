@@ -39,9 +39,11 @@ configure() {
 
     log "Configuring Tomcat"
 
+    [[ -z "$TOMCAT_USER" ]] && { echo "Error: TOMCAT_USER not found"; exit 1; }
     [[ -z "$TOMCAT_PASSWORD" ]] && { echo "Error: TOMCAT_PASSWORD not found"; exit 1; }
     
     # Run sed to repace Tomcat Password
+    sed -i -e "s#TOMCATUSER#$TOMCAT_USER#g" $CATALINA_HOME/conf/tomcat-users.xml
     sed -i -e "s#TOMCATPASSWORD#$TOMCAT_PASSWORD#g" $CATALINA_HOME/conf/tomcat-users.xml
 
     # Set the lock

@@ -115,7 +115,7 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
 
 1. Navigate to `Overview`
 
-    The Application you created will be listed grouped by Pod. Visit each Pod to note the avaiable Routes to each Pod. The Routes are named according to the following naming convention where NAMESPACE=triton for this installation:
+    The Application you created will be listed grouped by Pod. Visit each Pod to note the avaiable Routes to each Pod. The Routes are named according to the following naming convention where `NAMESPACE=triton` for this installation:
 
     * http://CUSTOMER_ID-jenkins-NAMESPACE-openshift.sytes.net
     * http://CUSTOMER_ID-tomcat-NAMESPACE-openshift.sytes.net

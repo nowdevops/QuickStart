@@ -8,9 +8,9 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
 
 # Installation
 
-1. Login to OKD as Cluster Administrator
+1. Login to [OKD](https://openshift.sytes.net:8443) as Cluster Administrator
 
-1. Create Namespace (e.g. triton)
+1. Create Namespace (e.g. `triton`)
 
     ```
     oc create namespace triton
@@ -41,7 +41,7 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
     ssh-keygen -t rsa -b 4096 -C "triton@noreply.com" -f $HOME/.ssh/triton
     ```
 
-1. Configure GitHub Project (e.g. advlab) Deploy Key using the Git Key from above
+1. Configure [GitHub Project](https://github.com/advlab/triton) Deploy Key using the Git Key from above
 
 1. Create GitHub Secret
 
@@ -101,15 +101,15 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
 
 1. Configure Template as follows:
 
-    * Customer ID (e.g. acme)
-    * GitHub ID (e.g. dsmith)
-    * Tomcat User (e.g. admin)
-    * Tomcat Password (e.g. changeit)
-    * Jenkins User (e.g. admin)
-    * Tomcat Password (e.g. changeit)
-    * Tomcat Memory Limit (e.g. 1Gi)
-    * Jenkins Memory Limit (e.g. 1Gi)
-    * Jenkins Volume Capacity (e.g. 5Gi)
+    * Customer ID (e.g. `acme`)
+    * GitHub ID (e.g. `dsmith`)
+    * Tomcat User (e.g. `admin`)
+    * Tomcat Password (e.g. `changeit`)
+    * Jenkins User (e.g. `admin`)
+    * Tomcat Password (e.g. `changeit`)
+    * Tomcat Memory Limit (e.g. `1Gi`)
+    * Jenkins Memory Limit (e.g. `1Gi`)
+    * Jenkins Volume Capacity (e.g. `5Gi`)
 
 1. Press `Create`
 

@@ -119,7 +119,7 @@ objects:
       weight: 100
     wildcardPolicy: None
 ################################################################################
-#                        Persistent Volume Claim                               #
+#                                  Jenkins PVC                                 #
 ################################################################################
 - apiVersion: v1
   kind: PersistentVolumeClaim

@@ -119,6 +119,21 @@ objects:
       weight: 100
     wildcardPolicy: None
 ################################################################################
+#                        Persistent Volume Claim                               #
+################################################################################
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-jenkins-data
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: ${JENKINS_VOLUME_CAPACITY}    
+################################################################################
 #                       Jenkins Deployment Configuration                       #
 ################################################################################
 - apiVersion: apps.openshift.io/v1
@@ -171,7 +186,7 @@ objects:
             terminationMessagePolicy: File
             volumeMounts:
               - mountPath: /var/jenkins_home
-                name: jenkins-1
+                name: ${CUSTOMER_ID}-jenkins-data
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
@@ -179,8 +194,9 @@ objects:
         serviceAccountName: triton
         terminationGracePeriodSeconds: 30
         volumes:
-          - emptyDir: {}
-            name: jenkins-1
+          - name: ${CUSTOMER_ID}-jenkins-data
+            persistentVolumeClaim:
+              claimName: ${CUSTOMER_ID}-jenkins-data
     test: false
     triggers:
       - type: ConfigChange
@@ -277,3 +293,8 @@ parameters:
   displayName: Jenkins Memory Limit
   required: true
   value: 1Gi
+- name: JENKINS_VOLUME_CAPACITY
+  description: Volume space available for Jenkins data, e.g. 512Mi, 2Gi.
+  displayName: Jenkins Volume Capacity
+  required: true
+  value: 5Gi

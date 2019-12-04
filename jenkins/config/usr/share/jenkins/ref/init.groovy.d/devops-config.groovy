@@ -22,4 +22,4 @@ devops.toolId=env.NOW_TOOLID
 devops.debug=false
 
 // Save Config
-jenkins.save()
+devops.save()

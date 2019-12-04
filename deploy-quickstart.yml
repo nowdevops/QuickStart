@@ -164,7 +164,7 @@ objects:
               - name: JENKINS_USER
                 value: ${JENKINS_USER}
               - name: JENKINS_PASSWORD
-                value: ${JENKINS_PASSWORD}                            
+                value: ${JENKINS_PASSWORD}
               - name: GITHUB_ID
                 value: ${GITHUB_ID}
               - name: TOMCAT_USER
@@ -172,7 +172,15 @@ objects:
               - name: TOMCAT_PASSWORD
                 value: ${TOMCAT_PASSWORD}
               - name: CUSTOMER_ID
-                value: ${CUSTOMER_ID}                
+                value: ${CUSTOMER_ID}
+              - name: NOW_URL
+                value: ${NOW_URL}
+              - name: NOW_USER
+                value: ${NOW_USER}
+              - name: NOW_PASSWORD
+                value: ${NOW_PASSWORD}
+              - name: NOW_TOOLID
+                value: ${NOW_TOOLID}        
             image: 'jenkins'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins
@@ -300,3 +308,21 @@ parameters:
   displayName: Jenkins Volume Capacity
   required: true
   value: 5Gi
+- name: NOW_URL
+  description: NOW URL (e.g. https://devopspoc.service-now.com)
+  displayName: NOW URL
+  required: true
+- name: NOW_USER
+  description: NOW USER (e.g. devops.integration.user)
+  displayName: NOW USER
+  required: true
+  value: devops.integration.user
+- name: NOW_PASSWORD
+  description: NOW PASSWORD (e.g. "devops")
+  displayName: NOW PASSWORD
+  required: true
+  value: devops
+- name: NOW_TOOLID
+  description: NOW TOOLID (e.g. 82d2fa7413ed485014e3754a6144b07c)
+  displayName: NOW TOOLID
+  required: true

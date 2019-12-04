@@ -28,4 +28,4 @@ devops.save()
 jenkins.save()
 
 // Test Config
-devops.testConnection(env.NOW_URL,apiVersion,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)
+devops.doTestConnection(env.NOW_URL,apiVersion,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)

@@ -11,3 +11,9 @@ def devops = jenkins.getDescriptor("io.jenkins.plugins.config.DevOpsConfiguratio
 
 // Test Config
 devops.doTestConnection(env.NOW_URL,env.NOW_API_VERSION,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)
+
+// Save Plugin
+devops.save()
+
+// Save Config
+jenkins.save()

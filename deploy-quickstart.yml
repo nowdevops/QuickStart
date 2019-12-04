@@ -175,6 +175,8 @@ objects:
                 value: ${CUSTOMER_ID}
               - name: NOW_URL
                 value: ${NOW_URL}
+              - name: NOW_API_VERSION
+                value: ${NOW_API_VERSION}                
               - name: NOW_USER
                 value: ${NOW_USER}
               - name: NOW_PASSWORD
@@ -312,6 +314,11 @@ parameters:
   description: NOW URL (e.g. https://devopspoc.service-now.com/)
   displayName: NOW URL
   required: true
+- name: NOW_API_VERSION
+  description: NOW API Version (e.g. v1)
+  displayName: NOW API Version
+  required: true
+  value: v1
 - name: NOW_USER
   description: NOW USER (e.g. devops.integration.user)
   displayName: NOW USER

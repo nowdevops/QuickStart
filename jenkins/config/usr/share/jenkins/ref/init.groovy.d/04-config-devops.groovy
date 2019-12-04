@@ -1,8 +1,5 @@
 import jenkins.model.*
 
-// Local Variables
-String apiVersion = "v1"
-
 // Get System Environment
 def env = System.getenv()
 
@@ -15,14 +12,11 @@ def devops = jenkins.getDescriptor("io.jenkins.plugins.config.DevOpsConfiguratio
 // Set DevOps Plugin Properties
 devops.snDevopsEnabled=true
 devops.instanceUrl=env.NOW_URL
-devops.apiVersion=apiVersion
+devops.apiVersion=env.NOW_API_VERSION
 devops.user=env.NOW_USER
 devops.pwd=env.NOW_PASSWORD
 devops.toolId=env.NOW_TOOLID
 devops.debug=false
-
-// Test Config
-devops.doTestConnection(env.NOW_URL,apiVersion,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)
 
 // Save Plugin
 devops.save()

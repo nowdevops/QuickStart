@@ -21,5 +21,8 @@ devops.pwd=env.NOW_PASSWORD
 devops.toolId=env.NOW_TOOLID
 devops.debug=false
 
-// Save Config
+// Save Plugin
 devops.save()
+
+// Save Config
+jenkins.save()

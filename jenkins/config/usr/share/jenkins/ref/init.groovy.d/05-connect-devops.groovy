@@ -18,7 +18,7 @@ logger.info("Testing ServiceNow Connection")
 devops.doTestConnection(env.NOW_URL,env.NOW_API_VERSION,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)
 
 // Wait
-sleep(time:5,unit:"SECONDS")
+sleep(5)
 
 // Save Config
 jenkins.save()

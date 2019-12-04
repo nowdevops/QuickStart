@@ -44,6 +44,9 @@ configure() {
     # Run sed to repace GitHub Username
     sed -i -e "s#GITHUBUSERNAME#$GITHUB_ID#g" $JENKINS_JOBS/*.xml
 
+    # Run sed to repace Tomcat URL
+    sed -i -e "s#CUSTOMERID#$CUSTOMER_ID#g" $JENKINS_JOBS/*.xml
+
      # Job 1
     JOB_NAME=CorpSite-CI
     JOB_FILE=CorpSiteCI.xml

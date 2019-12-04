@@ -61,7 +61,7 @@
       <adapters>
         <hudson.plugins.deploy.tomcat.Tomcat8xAdapter>
           <credentialsId>tomcat</credentialsId>
-          <url>http://creditsuisse-tomcat-triton.openshift.sytes.net</url>
+          <url>http://CUSTOMERID-tomcat-triton.openshift.sytes.net</url>
           <path></path>
         </hudson.plugins.deploy.tomcat.Tomcat8xAdapter>
       </adapters>

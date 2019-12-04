@@ -171,6 +171,8 @@ objects:
                 value: ${TOMCAT_USER}
               - name: TOMCAT_PASSWORD
                 value: ${TOMCAT_PASSWORD}
+              - name: CUSTOMER_ID
+                value: ${CUSTOMER_ID}                
             image: 'jenkins'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins

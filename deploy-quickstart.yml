@@ -74,7 +74,7 @@ objects:
       - type: ConfigChange
       - type: ImageChange
         imageChangeParams:
-          automatic: false
+          automatic: true
           containerNames:
             - ${CUSTOMER_ID}-tomcat
           from:
@@ -212,7 +212,7 @@ objects:
       - type: ConfigChange
       - type: ImageChange
         imageChangeParams:
-          automatic: false
+          automatic: true
           containerNames:
             - ${CUSTOMER_ID}-jenkins
           from:

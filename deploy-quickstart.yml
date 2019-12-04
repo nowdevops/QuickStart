@@ -180,11 +180,11 @@ objects:
               - name: NOW_PASSWORD
                 value: ${NOW_PASSWORD}
               - name: NOW_TOOLID
-                value: ${NOW_TOOLID}        
+                value: ${NOW_TOOLID}
             image: 'jenkins'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins
-            ports:    
+            ports:
               - containerPort: 8080
                 protocol: TCP
               - containerPort: 50000

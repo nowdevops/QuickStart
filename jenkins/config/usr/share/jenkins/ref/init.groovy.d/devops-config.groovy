@@ -18,7 +18,7 @@ devops.instanceUrl=env.NOW_URL
 devops.apiVersion=apiVersion
 devops.user=env.NOW_USER
 devops.pwd=env.NOW_PASSWORD
-devops.toolId=NOW_TOOLID
+devops.toolId=env.NOW_TOOLID
 devops.debug=false
 
 // Save Plugin

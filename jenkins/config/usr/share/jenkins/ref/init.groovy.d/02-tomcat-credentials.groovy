@@ -7,6 +7,10 @@ import com.cloudbees.jenkins.plugins.sshcredentials.impl.*
 import org.jenkinsci.plugins.plaincredentials.*
 import org.jenkinsci.plugins.plaincredentials.impl.*
 import hudson.util.Secret
+import java.util.logging.Logger
+
+// Get Logger
+Logger logger = Logger.getLogger("")
 
 // Get System Environment
 def env = System.getenv()
@@ -20,6 +24,7 @@ def getStore() {
 domain = Domain.global()
 
 // Create Credential
+logger.info("Creating Tomcat connection credentials")
 String id = "tomcat"
 String description = "Tomcat Credentials"
 Credentials credentials = (Credentials) new UsernamePasswordCredentialsImpl(CredentialsScope.GLOBAL, id, description, env.TOMCAT_USER, env.TOMCAT_PASSWORD)

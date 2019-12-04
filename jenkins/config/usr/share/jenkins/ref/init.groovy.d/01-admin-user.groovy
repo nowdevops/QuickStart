@@ -1,5 +1,9 @@
 import jenkins.model.*
 import hudson.security.*
+import java.util.logging.Logger
+
+// Get Logger
+Logger logger = Logger.getLogger("")
 
 // Get System Environment
 def env = System.getenv()
@@ -15,6 +19,7 @@ if(!(jenkins.getAuthorizationStrategy() instanceof GlobalMatrixAuthorizationStra
     jenkins.setAuthorizationStrategy(new GlobalMatrixAuthorizationStrategy())
 
 // Create User
+logger.info("Creating Default Admin User")
 def user = jenkins.getSecurityRealm().createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
 user.save()
 

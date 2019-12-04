@@ -1,4 +1,8 @@
 import jenkins.model.*
+import java.util.logging.Logger
+
+// Get Logger
+Logger logger = Logger.getLogger("")
 
 // Get System Environment
 def env = System.getenv()
@@ -10,10 +14,11 @@ def jenkins = Jenkins.getInstance()
 def devops = jenkins.getDescriptor("io.jenkins.plugins.config.DevOpsConfiguration")
 
 // Test Config
+logger.info("Testing ServiceNow Connection")
 devops.doTestConnection(env.NOW_URL,env.NOW_API_VERSION,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)
 
-// Save Plugin
-devops.save()
+// Wait
+sleep(time:5,unit:"SECONDS")
 
 // Save Config
 jenkins.save()

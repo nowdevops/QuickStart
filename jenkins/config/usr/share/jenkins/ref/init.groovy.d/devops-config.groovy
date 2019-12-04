@@ -21,11 +21,11 @@ devops.pwd=env.NOW_PASSWORD
 devops.toolId=env.NOW_TOOLID
 devops.debug=false
 
+// Test Config
+devops.doTestConnection(env.NOW_URL,apiVersion,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)
+
 // Save Plugin
 devops.save()
 
 // Save Config
 jenkins.save()
-
-// Test Config
-devops.doTestConnection(env.NOW_URL,apiVersion,env.NOW_USER,env.NOW_PASSWORD,env.NOW_TOOLID)

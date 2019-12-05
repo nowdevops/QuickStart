@@ -15,7 +15,7 @@ def devops = jenkins.getDescriptor("io.jenkins.plugins.config.DevOpsConfiguratio
 
 // Set DevOps Plugin Properties
 logger.info("Configuring DevOps Plugin")
-devops.snDevopsEnabled=true
+devops.snDevopsEnabled=false
 devops.instanceUrl=env.NOW_URL
 devops.apiVersion=env.NOW_API_VERSION
 devops.user=env.NOW_USER

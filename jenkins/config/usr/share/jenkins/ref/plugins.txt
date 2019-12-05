@@ -1,3 +1,4 @@
+cloudbees-folder
 jqs-monitoring
 ant
 scm-api 

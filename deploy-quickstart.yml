@@ -52,7 +52,7 @@ objects:
                 value: ${TOMCAT_USER}
               - name: TOMCAT_PASSWORD
                 value: ${TOMCAT_PASSWORD}                
-            image: 'tomcat'
+            image: 'quickstart-tomcat:latest'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-tomcat
             ports:
@@ -79,7 +79,7 @@ objects:
             - ${CUSTOMER_ID}-tomcat
           from:
             kind: ImageStreamTag
-            name: 'tomcat:jdk8-openjdk'
+            name: 'quickstart-tomcat:latest'
 ################################################################################
 #                                Tomcat Service                                #
 ################################################################################
@@ -183,7 +183,7 @@ objects:
                 value: ${NOW_PASSWORD}
               - name: NOW_TOOLID
                 value: ${NOW_TOOLID}
-            image: 'jenkins'
+            image: 'quickstart-jenkins:latest'
             imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins
             ports:
@@ -214,14 +214,14 @@ objects:
     test: false
     triggers:
       - type: ConfigChange
-      - type: ImageChange
-        imageChangeParams:
-          automatic: true
-          containerNames:
-            - ${CUSTOMER_ID}-jenkins
-          from:
-            kind: ImageStreamTag
-            name: 'jenkins:lts-centos'
+      # - type: ImageChange
+      #   imageChangeParams:
+      #     automatic: true
+      #     containerNames:
+      #       - ${CUSTOMER_ID}-jenkins
+      #     from:
+      #       kind: ImageStreamTag
+      #       name: 'quickstart-jenkins:latest'
 ################################################################################
 #                               Jenkins Service                                #
 ################################################################################

@@ -5,14 +5,14 @@
 # credentials-binding
 deploy
 # email-ext
-github-api
-github-organization-folder
+# github-api
+# github-organization-folder
 # gradle
 # http_request
 # jqs-monitoring
-junit
+# junit
 # maven-plugin
-notification
+# notification
 # pipeline-aws
 # pipeline-maven
 # scm-api

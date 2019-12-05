@@ -2,7 +2,7 @@ import jenkins.model.*
 import java.util.logging.Logger
 
 // Get Logger
-Logger logger = Logger.getLogger(this.class)
+Logger logger = Logger.getLogger("ConfigDevOps")
 
 // Get System Environment
 def env = System.getenv()

@@ -3,7 +3,7 @@ import hudson.security.*
 import java.util.logging.Logger
 
 // Get Logger
-Logger logger = Logger.getLogger(this.class)
+Logger logger = Logger.getLogger("CreateAdminUser")
 
 // Get System Environment
 def env = System.getenv()

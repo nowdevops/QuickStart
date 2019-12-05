@@ -3,13 +3,13 @@ import hudson.security.*
 import java.util.logging.Logger
 
 // Get Logger
-Logger logger = Logger.getLogger("")
+Logger logger = Logger.getLogger(this.class)
 
 // Get System Environment
 def env = System.getenv()
 
 // Get Jenkins Instance
-def jenkins = Jenkins.getInstance()
+Jenkins jenkins = Jenkins.getInstance()
 
 // Set Security Realms
 if(!(jenkins.getSecurityRealm() instanceof HudsonPrivateSecurityRealm))

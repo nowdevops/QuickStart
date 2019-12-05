@@ -10,7 +10,7 @@ import hudson.util.Secret
 import java.util.logging.Logger
 
 // Get Logger
-Logger logger = Logger.getLogger("")
+Logger logger = Logger.getLogger(this.class)
 
 // Get System Environment
 def env = System.getenv()

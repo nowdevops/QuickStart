@@ -5,7 +5,7 @@ import hudson.model.*;
 import java.util.logging.Logger
 
 // Get Logger
-Logger logger = Logger.getLogger("")
+Logger logger = Logger.getLogger(this.class)
 
 // Set Maven Version
 mavenVersion = "3.6.0";

@@ -72,14 +72,14 @@ objects:
     test: false
     triggers:
       - type: ConfigChange
-      # - type: ImageChange
-      #   imageChangeParams:
-      #     automatic: true
-      #     containerNames:
-      #       - ${CUSTOMER_ID}-tomcat
-      #     from:
-      #       kind: ImageStreamTag
-      #       name: 'tomcat:jdk8-openjdk'
+      - type: ImageChange
+        imageChangeParams:
+          automatic: true
+          containerNames:
+            - ${CUSTOMER_ID}-tomcat
+          from:
+            kind: ImageStreamTag
+            name: 'tomcat:jdk8-openjdk'
 ################################################################################
 #                                Tomcat Service                                #
 ################################################################################
@@ -214,14 +214,14 @@ objects:
     test: false
     triggers:
       - type: ConfigChange
-      # - type: ImageChange
-      #   imageChangeParams:
-      #     automatic: true
-      #     containerNames:
-      #       - ${CUSTOMER_ID}-jenkins
-      #     from:
-      #       kind: ImageStreamTag
-      #       name: 'jenkins:lts-centos'
+      - type: ImageChange
+        imageChangeParams:
+          automatic: true
+          containerNames:
+            - ${CUSTOMER_ID}-jenkins
+          from:
+            kind: ImageStreamTag
+            name: 'jenkins:lts-centos'
 ################################################################################
 #                               Jenkins Service                                #
 ################################################################################

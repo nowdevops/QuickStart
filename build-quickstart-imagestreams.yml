@@ -24,7 +24,7 @@ objects:
   metadata:
     labels:
       app: quickstart
-    name: tomcat
+    name: quickstart-tomcat
   spec:
     lookupPolicy:
       local: false
@@ -44,7 +44,7 @@ objects:
   metadata:
     labels:
       app: quickstart
-    name: jenkins
+    name: quickstart-jenkins
   spec:
     lookupPolicy:
       local: false

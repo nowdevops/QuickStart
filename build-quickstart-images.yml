@@ -39,7 +39,7 @@ objects:
     output:
       to:
         kind: ImageStreamTag
-        name: tomcat:jdk8-openjdk
+        name: quickstart-tomcat:latest
     source:
       git:
         uri: ssh://git@github.com/advlab/triton.git
@@ -80,7 +80,7 @@ objects:
     output:
       to:
         kind: ImageStreamTag
-        name: jenkins:lts-centos
+        name: quickstart-jenkins:latest
     source:
       git:
         uri: ssh://git@github.com/advlab/triton.git

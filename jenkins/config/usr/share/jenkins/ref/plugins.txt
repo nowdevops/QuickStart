@@ -5,6 +5,7 @@
 plain-credentials
 deploy
 mailer
+matrix-auth-plugin
 # github-api
 # github-organization-folder
 # gradle

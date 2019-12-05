@@ -11,7 +11,7 @@ gradle
 http_request
 jqs-monitoring
 junit
-maven-plugin
+# maven-plugin
 notification
 pipeline-aws
 pipeline-maven

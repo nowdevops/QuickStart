@@ -109,5 +109,6 @@ parameters:
 - name: JENKINS_VERSION
   description: Jenkins Version
   displayName: Jenkins Version
-  value: 2.190.2
-  required: true    
+  # value: 2.190.2
+  value: 2.176.3
+  required: true

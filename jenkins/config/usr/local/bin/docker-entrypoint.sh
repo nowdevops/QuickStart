@@ -50,22 +50,22 @@ configure() {
      # Job 1
     JOB_NAME=CorpSite-CI
     JOB_FILE=CorpSiteCI.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml.override
+    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
 
     # Job 2
     JOB_NAME=CorpSite-UAT-deploy
     JOB_FILE=CorpSiteUATdeploy.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml.override
+    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
 
     # Job 3
     JOB_NAME=CorpSite-UAT-test
     JOB_FILE=CorpSiteUATtest.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml.override
+    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
 
     # Job 4
     JOB_NAME=CorpSite-PROD-deploy
     JOB_FILE=CorpSitePRODdeploy.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml.override
+    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
 
     # Set the lock
     touch $LOCKFILE

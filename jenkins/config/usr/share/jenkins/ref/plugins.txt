@@ -15,7 +15,7 @@ maven-plugin
 notification
 pipeline-aws
 pipeline-maven
-scm-api 
+scm-api
 ssh-slaves
 subversion
 timestamper

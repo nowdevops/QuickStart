@@ -52,8 +52,8 @@ objects:
                 value: ${TOMCAT_USER}
               - name: TOMCAT_PASSWORD
                 value: ${TOMCAT_PASSWORD}                
-            image: 'quickstart-tomcat:latest'
-            imagePullPolicy: IfNotPresent
+            image: 'docker-registry.default.svc:5000/triton/quickstart-tomcat:latest'
+            imagePullPolicy: Always
             name: ${CUSTOMER_ID}-tomcat
             ports:
               - containerPort: 8080
@@ -74,7 +74,7 @@ objects:
       - type: ConfigChange
       # - type: ImageChange
       #   imageChangeParams:
-      #     automatic: true
+      #     automatic: false
       #     containerNames:
       #       - ${CUSTOMER_ID}-tomcat
       #     from:
@@ -183,8 +183,8 @@ objects:
                 value: ${NOW_PASSWORD}
               - name: NOW_TOOLID
                 value: ${NOW_TOOLID}
-            image: 'quickstart-jenkins:latest'
-            imagePullPolicy: IfNotPresent
+            image: 'docker-registry.default.svc:5000/triton/quickstart-jenkins:latest'
+            imagePullPolicy: Always
             name: ${CUSTOMER_ID}-jenkins
             ports:
               - containerPort: 8080
@@ -202,9 +202,10 @@ objects:
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
-        securityContext: 
-          fsGroup: 1000
-          runAsUser: 1000
+        securityContext: {}
+        # securityContext: 
+        #   fsGroup: 1000
+        #   runAsUser: 1000
         serviceAccountName: triton
         terminationGracePeriodSeconds: 30
         volumes:

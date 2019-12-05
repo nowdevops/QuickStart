@@ -89,4 +89,3 @@ http_request:1.8.24
 workflow-durable-task-step:2.35
 pipeline-milestone-step:1.3.1
 pipeline-stage-step:2.3
-app-devops-jenkins:1.6.0

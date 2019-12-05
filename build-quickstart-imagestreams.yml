@@ -27,15 +27,7 @@ objects:
     name: quickstart-tomcat
   spec:
     lookupPolicy:
-      local: false
-    tags:
-      - from:
-          kind: DockerImage
-          name: 'quickstart-tomcat:latest'
-        importPolicy: {}
-        name: latest
-        referencePolicy:
-          type: Source    
+      local: true
 ###############################################################################
 #                             Jenkins Image Stream                            #
 ###############################################################################
@@ -47,12 +39,4 @@ objects:
     name: quickstart-jenkins
   spec:
     lookupPolicy:
-      local: false
-    tags:
-      - from:
-          kind: DockerImage
-          name: 'quickstart-jenkins:latest'
-        importPolicy: {}
-        name: latest
-        referencePolicy:
-          type: Source    
+      local: true

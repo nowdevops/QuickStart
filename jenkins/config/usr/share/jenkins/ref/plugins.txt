@@ -1,23 +1,23 @@
-ant
-branch-api
-build-pipeline-plugin
-build-timeout
-credentials-binding
+# ant
+# branch-api
+# build-pipeline-plugin
+# build-timeout
+# credentials-binding
 deploy
-email-ext
+# email-ext
 github-api
 github-organization-folder
-gradle
-http_request
-jqs-monitoring
+# gradle
+# http_request
+# jqs-monitoring
 junit
 # maven-plugin
 notification
-pipeline-aws
-pipeline-maven
-scm-api
-ssh-slaves
-subversion
-timestamper
-workflow-aggregator
-ws-cleanup
+# pipeline-aws
+# pipeline-maven
+# scm-api
+# ssh-slaves
+# subversion
+# timestamper
+# workflow-aggregator
+# ws-cleanup

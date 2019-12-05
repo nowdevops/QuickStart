@@ -31,9 +31,9 @@ objects:
     tags:
       - from:
           kind: DockerImage
-          name: 'tomcat:jdk8-openjdk'
+          name: 'quickstart-tomcat:latest'
         importPolicy: {}
-        name: jdk8-openjdk
+        name: latest
         referencePolicy:
           type: Source    
 ###############################################################################
@@ -51,8 +51,8 @@ objects:
     tags:
       - from:
           kind: DockerImage
-          name: 'jenkins/jenkins:lts-centos'
+          name: 'quickstart-jenkins:latest'
         importPolicy: {}
-        name: lts-centos
+        name: latest
         referencePolicy:
           type: Source    

@@ -53,7 +53,7 @@ objects:
               - name: TOMCAT_PASSWORD
                 value: ${TOMCAT_PASSWORD}                
             image: 'docker-registry.default.svc:5000/triton/quickstart-tomcat:latest'
-            imagePullPolicy: Always
+            imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-tomcat
             ports:
               - containerPort: 8080
@@ -184,7 +184,7 @@ objects:
               - name: NOW_TOOLID
                 value: ${NOW_TOOLID}
             image: 'docker-registry.default.svc:5000/triton/quickstart-jenkins:latest'
-            imagePullPolicy: Always
+            imagePullPolicy: IfNotPresent
             name: ${CUSTOMER_ID}-jenkins
             ports:
               - containerPort: 8080

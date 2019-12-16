@@ -1,0 +1,42 @@
+###############################################################################
+#                        Quickstart Imagestreams Template                     #
+###############################################################################
+apiVersion: template.openshift.io/v1
+kind: Template
+message: Deploy Quickstart complete
+metadata:
+  labels:
+    template: build-quickstart-images
+  name: build-quickstart-images
+  annotations:
+    description: Deploy Quickstart
+    openshift.io/display-name: Deploy Quickstart
+    openshift.io/long-description: Deploy Quickstart
+    openshift.io/provider-display-name: ServiceNow
+    openshift.io/support-url: https://github.com/advlab/triton
+    tags: servicenow
+objects:
+###############################################################################
+#                             Tomcat Image Stream                            #
+###############################################################################
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: quickstart
+    name: quickstart-tomcat
+  spec:
+    lookupPolicy:
+      local: true
+###############################################################################
+#                             Jenkins Image Stream                            #
+###############################################################################
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: quickstart
+    name: quickstart-jenkins
+  spec:
+    lookupPolicy:
+      local: true

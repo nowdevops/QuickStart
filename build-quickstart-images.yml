@@ -43,7 +43,7 @@ objects:
     source:
       git:
         uri: ssh://git@github.com/advlab/triton.git
-        ref: bravo
+        ref: master
       sourceSecret:
         name: github-triton
       type: Git
@@ -84,7 +84,7 @@ objects:
     source:
       git:
         uri: ssh://git@github.com/advlab/triton.git
-        ref: bravo
+        ref: master
       sourceSecret:
         name: github-triton
       type: Git

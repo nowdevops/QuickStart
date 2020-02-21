@@ -8,7 +8,7 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
 
 # Installation
 
-Installing QuickStart consists of setting the OpenShift Cluster namespace
+Installing QuickStart consists of initially setting the OpenShift Cluster namespace and allowing users to create their own QuickStart containers using the Catalog to kick off templated container deployments.
 
 ## Creating QuickStart Namespace
 

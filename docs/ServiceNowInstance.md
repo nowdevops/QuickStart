@@ -6,5 +6,6 @@
 
     ![Figure 1](ServiceNowHICatalog1.png)
 
->NOTE: The request can take several hours to provision. Watch your E-Mail Inbox
+>NOTE: The request can take several hours to provision. Watch your E-Mail Inbox.
 
+1. Once you receive a `Provision result notification` E-Mail from HI, safeguard the `admin` User Password for later use

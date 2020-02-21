@@ -33,11 +33,12 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
     ![Figure 2](ServiceNowPluginSearch1.png)
 
-1. Continue to *Search*, *Install* and *Activate* each of the following Plugins:    
+1. Continue to *Search*, *Install* and *Activate* each of the following Plugins:
+
+    >NOTE: It can take several minutes to *Activate* each Plugin
 
     * Agile 2.0 (ID: *com.snc.sdlc.agile.2.0*)
     * Integration Hub (ID: *com.glide.hub.integrations*)
     * Performance Analytics (ID: *com.snc.pa*)
     * Explicit Roles (ID: *com.glide.explicit_roles*)
 
-        >NOTE: Be patient, it can take several minutes to *Activate* each Plugin

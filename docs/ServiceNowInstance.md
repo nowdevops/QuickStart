@@ -4,5 +4,7 @@
 
 1. Request a `New Internal Instance Request` with latest Application Version (e.g. `New York Patch 6`)
 
+    ![Figure 1](ServiceNowHICatalog1.png)
+
 >NOTE: The request can take several hours to provision. Watch your E-Mail Inbox
 

@@ -44,7 +44,7 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 ## Install the DevOps Plugin
 
-1. Login to the [ServiceNow Store] 
+1. Login to the [ServiceNow Store](https://store.servicenow.com)
 
 1. Search for the DevOps Plugin by using this [link](https://store.servicenow.com/sn_appstore_store.do#!/store/application/34cfa6f087302300f97abba826cb0b54)
 

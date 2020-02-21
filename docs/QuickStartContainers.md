@@ -6,6 +6,8 @@
 
 1. Fiter by `ServiceNow` Publisher
 
+![Intro](./docs/QuickStartCatalogItem1.png)
+
 1. Select the `Deploy Quickstart` Template
 
 1. Press `Next`

@@ -5,6 +5,7 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
 # Prerequisites
 
 * OKD Cluster Admin Access
+* ServiceNow HI Portal Access
 
 # Installation
 

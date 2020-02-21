@@ -21,3 +21,10 @@ Before you can deploy QuickStart Containers the OKD administrator needs to perfo
 Creating QuickStart containers is easy and it consists of running a QuickStart template from the Catalog and providing a couple of parameters before kicking it off as follows:
 
 * [Creating QuickStart Containers](./docs/QuickStartContainers.md)
+
+## Creating ServiceNow Instance
+
+When using QuickStart containers you will need to create a ServiceNow instance and configure it for DevOps integrations with the QuickStart containers as follows:
+
+* [Creating ServiceNow Instance](./docs/ServiceNowInstance.md)
+

@@ -40,5 +40,4 @@ You will need to install several required PlugIns into your ServiceNow instance 
     * Performance Analytics (ID: *com.snc.pa*)
     * Explicit Roles (ID: *com.glide.explicit_roles*)
 
-
-    >NOTE: Be patient, it can take several minutes to *Activate* each Plugin
+        >NOTE: Be patient, it can take several minutes to *Activate* each Plugin

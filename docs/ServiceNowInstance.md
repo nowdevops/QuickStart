@@ -50,13 +50,21 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
     >NOTE: The DevOps Plugin is currently available as a limited release to qualified customers only and not listed as a generally available application in the ServiceNow Store
 
-1. Request the DevOps Plugin
+1. Press the `Request Install` Button to request approval
 
     ![Figure 3](ServiceNowStoreDevOps1.png)
 
-1. Validate your instance name and Request the installation
+1. Validate your instance name and press `Request`
 
     ![Figure 4](ServiceNowStoreDevOps2.png)
 
-    >NOTE: The DevOps Plugin may take several minutes to be installed on your instance  
+    >NOTE: The DevOps Plugin may take several minutes to be approved on your instance
 
+1. Login back to your instance as Administrator
+
+1. Select the `Plugins` Menu Option and *Search* and *Install* the following Plugins `DevOps` Plugins:
+
+    ![Figure 5](ServiceNowDevOpsPlugin1.png)
+
+    * DevOps (Empowering DevOps Transformation)
+    * DevOps (Insights - Supercharge your DevOps Insights)

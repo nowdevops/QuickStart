@@ -67,4 +67,6 @@ You will need to install several required PlugIns into your ServiceNow instance 
     ![Figure 5](ServiceNowDevOpsPlugin1.png)
 
     * DevOps (Empowering DevOps Transformation)
-    * DevOps (Insights - Supercharge your DevOps Insights)
+    * DevOps Insights (Supercharge your DevOps Insights)
+
+    >NOTE: We recommed installing the DevOps `demo data` with the Plugin to better understand its features

@@ -28,3 +28,16 @@ You will need to install several required PlugIns into your ServiceNow instance 
 1. Click on the `To log on with full access, click here` link and note the credentials for the `maint,admin,itil` Role which are your `User Name` and `Normal Password`. These are your `Maintenance Mode` credentials
 
 1. Login to your instance using the `Maintenance Mode` credentials
+
+1. Select the `Plugins` Menu Option
+
+    ![Figure 2](ServiceNowPluginSearch1.png)
+
+1. Continue to *Search*, *Install* and *Activate* each of the following Plugins:    
+
+    * Agile 2.0 (ID: *com.snc.sdlc.agile.2.0*)
+    * Integration Hub (ID: *com.glide.hub.integrations*)
+    * Performance Analytics (ID: *com.snc.pa*)
+    * Explicit Roles (ID: *com.glide.explicit_roles*)
+
+    >NOTE: Be patient, it can take several minutes to *Activate* each Plugin

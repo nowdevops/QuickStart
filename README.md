@@ -4,4 +4,4 @@ QuickStart CI/CD Deployment Template for a pre-configured Jenkins Pod. Later we 
 
 # Guides
 
-* [Administrator & User Guide](./docs/00-TOC.md)
+* [System User Guide](./docs/QuickStart-SUG.md)

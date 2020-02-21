@@ -1,4 +1,4 @@
-# Creating QuickStart Containers
+# Creating QuickStart Namespace
 
 1. Login to [OKD](https://openshift.sytes.net:8443) as Cluster Administrator
 

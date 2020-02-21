@@ -1,6 +1,5 @@
 # Creating ServiceNow Instance
 
-
 ## Create ServiceNow Instance
 
 1. Login to [HI](https://hi.service-now.com/hisp?id=hisp_service_catalog) Portal Service Catalog

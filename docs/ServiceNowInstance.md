@@ -38,7 +38,25 @@ You will need to install several required PlugIns into your ServiceNow instance 
     >NOTE: It can take several minutes to *Activate* each Plugin
 
     * Agile 2.0 (ID: *com.snc.sdlc.agile.2.0*)
-    * Integration Hub (ID: *com.glide.hub.integrations*)
+    * ServiceNow IntegrationHub Starter Pack Installer (ID: *com.glide.hub.integrations*)
     * Performance Analytics (ID: *com.snc.pa*)
     * Explicit Roles (ID: *com.glide.explicit_roles*)
+
+## Install the DevOps Plugin
+
+1. Login to the [ServiceNow Store] 
+
+1. Search for the DevOps Plugin by using this [link](https://store.servicenow.com/sn_appstore_store.do#!/store/application/34cfa6f087302300f97abba826cb0b54)
+
+    >NOTE: The DevOps Plugin is currently available as a limited release to qualified customers only and not listed as a generally available application in the ServiceNow Store
+
+1. Request the DevOps Plugin
+
+    ![Figure 3](ServiceNowStoreDevOps1.png)
+
+1. Validate your instance name and Request the installation
+
+    ![Figure 4](ServiceNowStoreDevOps2.png)
+
+    >NOTE: The DevOps Plugin may take several minutes to be installed on your instance  
 

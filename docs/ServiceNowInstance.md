@@ -5,7 +5,7 @@
 
 1. Login to [HI](https://hi.service-now.com/hisp?id=hisp_service_catalog) Portal Service Catalog
 
-1. Request a `New Internal Instance Request` with latest Application Version (e.g. `New York Patch 6`)
+1. Request a **New Internal Instance Request** with latest Application Version (e.g. `New York Patch 6`)
 
     ![Figure 1](ServiceNowHICatalog1.png)
 
@@ -19,17 +19,17 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Login to [HI Hop](https://hihop.service-now.com)
 
-1. Select the `Hop Dashboard` Menu Option and search for your instance as follows
+1. Select the **Hop Dashboard** Menu Option and search for your instance as follows
 
     ![Figure 2](ServiceNowHIHopSearch1.png)
 
 1. Press the `Log on` button to reveal your credentials
 
-1. Click on the `To log on with full access, click here` link and note the credentials for the `maint,admin,itil` Role which are your `User Name` and `Normal Password`. These are your `Maintenance Mode` credentials
+1. Click on the **To log on with full access, click here** link and note the credentials for the `maint,admin,itil` Role which are your `User Name` and `Normal Password`. These are your `Maintenance Mode` credentials
 
 1. Login to your instance using the `Maintenance Mode` credentials
 
-1. Select the `Plugins` Menu Option
+1. Select the **Plugins** Menu Option
 
     ![Figure 2](ServiceNowPluginSearch1.png)
 
@@ -48,7 +48,7 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Search for the DevOps Plugin by using this [link](https://store.servicenow.com/sn_appstore_store.do#!/store/application/34cfa6f087302300f97abba826cb0b54)
 
-    >NOTE: The DevOps Plugin is currently available as a limited release to qualified customers only and not listed as a generally available application in the ServiceNow Store
+    >NOTE: The DevOps Plugin is currently available as a *limited* release to *qualified customers* only and not listed as a generally available application in the ServiceNow Store
 
 1. Press the `Request Install` Button to request approval
 
@@ -62,7 +62,7 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Login back to your instance as Administrator
 
-1. Select the `Plugins` Menu Option and *Search* and *Install* the following Plugins `DevOps` Plugins:
+1. Select the **Plugins** Menu Option and *Search* and *Install* the following Plugins `DevOps` Plugins:
 
     ![Figure 5](ServiceNowDevOpsPlugin1.png)
 

@@ -149,7 +149,7 @@ When using QuickStart containers you will need to create a ServiceNow instance a
 
 1. Request a **New Internal Instance Request** with latest Application Version (e.g. `New York Patch 6`)
 
-    ![Figure 1](ServiceNowHICatalog1.png)
+    ![Figure 2](ServiceNowHICatalog1.png)
 
 >NOTE: The request can take several hours to provision. Watch your E-Mail Inbox.
 
@@ -163,7 +163,7 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Select the **Hop Dashboard** Menu Option and search for your instance as follows
 
-    ![Figure 2](ServiceNowHIHopSearch1.png)
+    ![Figure 3](ServiceNowHIHopSearch1.png)
 
 1. Press the `Log on` button to reveal your credentials
 
@@ -173,7 +173,7 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Select the **Plugins** Menu Option
 
-    ![Figure 2](ServiceNowPluginSearch1.png)
+    ![Figure 4](ServiceNowPluginSearch1.png)
 
 1. Continue to *Search*, *Install* and *Activate* each of the following Plugins:
 
@@ -194,11 +194,11 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Press the `Request Install` Button to request approval
 
-    ![Figure 3](ServiceNowStoreDevOps1.png)
+    ![Figure 5](ServiceNowStoreDevOps1.png)
 
 1. Validate your instance name and press `Request`
 
-    ![Figure 4](ServiceNowStoreDevOps2.png)
+    ![Figure 6](ServiceNowStoreDevOps2.png)
 
     >NOTE: The DevOps Plugin may take several minutes to be approved on your instance
 
@@ -206,10 +206,9 @@ You will need to install several required PlugIns into your ServiceNow instance 
 
 1. Select the **Plugins** Menu Option and *Search* and *Install* the following Plugins `DevOps` Plugins:
 
-    ![Figure 5](ServiceNowDevOpsPlugin1.png)
+    ![Figure 7](ServiceNowDevOpsPlugin1.png)
 
     >NOTE: We recommed installing the DevOps `demo data` with the Plugin to better understand its features
     
     * DevOps (Empowering DevOps Transformation)
     * DevOps Insights (Supercharge your DevOps Insights)
-

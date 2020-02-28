@@ -25,7 +25,7 @@ Installing QuickStart consists of creating a ServiceNow instance, deploying the 
     
     https://github.com/DevOpsManiac/CorpSite
 
-1. Provide the name of your Repository (e.g. `CorpSite`)
+1. Set the name of your Repository as `CorpSite`
 
 1. Press the **Begin Import** Button
 

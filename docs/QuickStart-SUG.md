@@ -1,18 +1,38 @@
 ---
-title: QuickStart for ServiceNow Devops (triton)
+title: QuickStart for ServiceNow Devops (triton) System User Guide
 author: ITx Emerging Solutions
 date: 2/21/2020
 ---
 
 # Prerequisites
 
-* OKD Cluster Admin Access
 * ServiceNow HI Portal Access
+* Personal GitHub.com Account
 
 # Summary
 
-Installing QuickStart consists of initially setting the OpenShift Cluster namespace and allowing users to create their own QuickStart containers using the Catalog to kick off templated container deployments.
+Installing QuickStart consists of creating a ServiceNow instance, deploying the DevOps Plugin and requesting the QuickStart containers to be depoyed. Last step is to connect your ServiceNow instance to the containers and you should be ready to perform demonstrations.
 
+# Clone Demo Web Site
+
+1. Login to your personal GitHub.com Account
+
+1. Create a `New` Repository
+
+1. Click on the **Import a Repository** link
+
+1. Provide the Demo Web Site URL as follows:
+    
+    https://github.com/DevOpsManiac/CorpSite
+
+1. Provide the name of your Repository (e.g. `CorpSite`)
+
+1. Press the **Begin Import** Button
+
+# Request QuickStart Containers
+
+Request QuickStart Containers from the QuickStart administrator and provide the URL your GitHub.com *Corp Site* project (e.g. `https://github.com/dsmith/CorpSite`). After creation you will receive back URL's and credentials for your containers.
+    
 # Creating the ServiceNow Instance
 
 When using QuickStart containers you will need to create a ServiceNow instance and configure it for DevOps integrations with the QuickStart containers as follows:

@@ -1,5 +1,5 @@
 ---
-title: QuickStart for ServiceNow Devops (triton)
+title: QuickStart for ServiceNow Devops (triton) System Admin Guide
 author: ITx Emerging Solutions
 date: 2/21/2020
 ---
@@ -11,7 +11,7 @@ date: 2/21/2020
 
 # Summary
 
-Installing QuickStart consists of initially setting the OpenShift Cluster namespace and allowing users to create their own QuickStart containers using the Catalog to kick off templated container deployments.
+Quickstart is a ServiceNow demonstration environment designed to support presales activities efficiently using containerized applications needed to showcase the ServiceNow DevOps product launch. After the initial setup of the OpenShift namespace and the deployment of all base images, the QuickStart administrator creates containers for users and coordinates the integration with their ServiceNow instances. 
 
 # Creating the QuickStart Namespace
 

@@ -93,7 +93,8 @@ Before you can deploy QuickStart Containers the OKD administrator needs to perfo
     -p TOMCAT_USER=admin \
     -p TOMCAT_PASSWORD=changeit \
     -p JENKINS_USER=admin \
-    -p JENKINS_PASSWORD=changeit
+    -p JENKINS_PASSWORD=changeit \
+    -l app=creditsuisse
     ```
 
 # Creating the QuickStart Containers

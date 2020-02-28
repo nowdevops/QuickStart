@@ -31,7 +31,7 @@ Installing QuickStart consists of creating a ServiceNow instance, deploying the 
 
 # Request QuickStart Containers
 
-Request QuickStart Containers from the QuickStart administrator and provide the URL your GitHub.com *Corp Site* project (e.g. `https://github.com/dsmith/CorpSite`). After creation you will receive back URL's and credentials for your containers.
+Request QuickStart Containers from the QuickStart administrator and provide the URL your GitHub.com *Corp Site* project (e.g. `https://github.com/bsmith/CorpSite`). After creation you will receive back URL's and credentials for your containers.
     
 # Creating the ServiceNow Instance
 

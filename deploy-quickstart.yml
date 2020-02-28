@@ -199,8 +199,6 @@ objects:
             volumeMounts:
               - mountPath: /var/jenkins_home
                 name: ${CUSTOMER_ID}-jenkins-data
-              - mountPath: /usr/share/jenkins
-                name: ${CUSTOMER_ID}-jenkins-share
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler

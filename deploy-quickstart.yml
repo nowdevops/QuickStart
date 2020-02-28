@@ -119,7 +119,7 @@ objects:
       weight: 100
     wildcardPolicy: None
 ################################################################################
-#                                  Jenkins PVC                                 #
+#                                  Jenkins PVCs                                #
 ################################################################################
 - apiVersion: v1
   kind: PersistentVolumeClaim
@@ -132,7 +132,19 @@ objects:
     - ReadWriteOnce
     resources:
       requests:
-        storage: ${JENKINS_VOLUME_CAPACITY}    
+        storage: ${JENKINS_VOLUME_CAPACITY}
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    labels:
+      app: ${CUSTOMER_ID}
+    name: ${CUSTOMER_ID}-jenkins-share
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: ${JENKINS_VOLUME_CAPACITY}        
 ################################################################################
 #                       Jenkins Deployment Configuration                       #
 ################################################################################
@@ -199,6 +211,8 @@ objects:
             volumeMounts:
               - mountPath: /var/jenkins_home
                 name: ${CUSTOMER_ID}-jenkins-data
+              - mountPath: /usr/share/jenkins
+                name: ${CUSTOMER_ID}-jenkins-share
         dnsPolicy: ClusterFirst
         restartPolicy: Always
         schedulerName: default-scheduler
@@ -211,6 +225,9 @@ objects:
           - name: ${CUSTOMER_ID}-jenkins-data
             persistentVolumeClaim:
               claimName: ${CUSTOMER_ID}-jenkins-data
+          - name: ${CUSTOMER_ID}-jenkins-share
+            persistentVolumeClaim:
+              claimName: ${CUSTOMER_ID}-jenkins-share              
     test: false
     triggers:
       - type: ConfigChange

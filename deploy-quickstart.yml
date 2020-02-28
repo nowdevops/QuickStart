@@ -210,7 +210,7 @@ objects:
         volumes:
           - name: ${CUSTOMER_ID}-jenkins-data
             persistentVolumeClaim:
-              claimName: ${CUSTOMER_ID}-jenkins-data
+              claimName: ${CUSTOMER_ID}-jenkins-data            
     test: false
     triggers:
       - type: ConfigChange

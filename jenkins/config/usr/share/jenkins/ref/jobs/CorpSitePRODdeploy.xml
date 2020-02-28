@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.5">
-      <projectUrl>https://github.com/GITHUBUSERNAME/CorpSite/</projectUrl>
+      <projectUrl>https://github.com/GITHUBUSERNAME/CorpSite</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <io.jenkins.plugins.config.DevOpsJobProperty plugin="app-devops-jenkins@1.8.0">
@@ -17,7 +17,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/GITHUBUSERNAME/CorpSite/</url>
+        <url>https://github.com/GITHUBUSERNAME/CorpSite</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>

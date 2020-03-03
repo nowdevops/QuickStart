@@ -17,7 +17,7 @@ metadata:
     tags: servicenow
 objects:
 ################################################################################
-#                       Tomcat Deployment Configuration                       #
+#                       Tomcat Deployment Configuration                        #
 ################################################################################
 - apiVersion: apps.openshift.io/v1
   kind: DeploymentConfig
@@ -293,8 +293,8 @@ parameters:
   required: true
   value: admin
 - name: JENKINS_PASSWORD
-  description: Tomcat Password (e.g. changeit)
-  displayName: Tomcat Password
+  description: Jenkins Password (e.g. changeit)
+  displayName: Jenkins Password
   required: true
   value: changeit
 - name: TOMCAT_MEMORY_LIMIT

@@ -14,11 +14,11 @@ def lockFile = new File(env.JENKINS_HOME+'/configured.lock')
 
 if (lockFile.exists()) {
 
-    print("Jenkins Admin User already configured")
+    logger.info("Jenkins Admin User already configured")
 
 } else {
 
-    print("Configuring Jenkins Admin User")
+    logger.info("Configuring Jenkins Admin User")
 
     // Get Jenkins Instance
     Jenkins jenkins = Jenkins.getInstance()
@@ -31,7 +31,7 @@ if (lockFile.exists()) {
         jenkins.setAuthorizationStrategy(new GlobalMatrixAuthorizationStrategy())
 
     // Create User
-    print("Creating Default Admin User")
+    logger.info("Creating Default Admin User")
     def user = jenkins.getSecurityRealm().createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
     user.save()
 

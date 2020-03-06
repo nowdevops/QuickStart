@@ -1,28 +1,42 @@
 import jenkins.model.*
 import hudson.security.*
 import java.util.logging.Logger
-
-// Get Logger
-Logger logger = Logger.getLogger("CreateAdminUser")
+import java.io.File
 
 // Get System Environment
 def env = System.getenv()
 
+// Get Logger
+Logger logger = Logger.getLogger("CreateAdminUser")
+
+// Set Lock file
+def lockFile = new File(env.JENKINS_HOME+'/configured.lock')
+
 // Get Jenkins Instance
 Jenkins jenkins = Jenkins.getInstance()
 
-// Set Security Realms
-if(!(jenkins.getSecurityRealm() instanceof HudsonPrivateSecurityRealm))
-    jenkins.setSecurityRealm(new HudsonPrivateSecurityRealm(false))
+if (lockFile.exists()) {
 
-if(!(jenkins.getAuthorizationStrategy() instanceof GlobalMatrixAuthorizationStrategy))
-    jenkins.setAuthorizationStrategy(new GlobalMatrixAuthorizationStrategy())
+    logger.info("Jenkins Admin User already configured")
 
-// Create User
-logger.info("Creating Default Admin User")
-def user = jenkins.getSecurityRealm().createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
-user.save()
+} else {
 
-// Set User as Jenkins Administrator
-jenkins.getAuthorizationStrategy().add(Jenkins.ADMINISTER, env.JENKINS_USER)
-jenkins.save()
+    logger.info("Configuring Jenkins Admin User")
+
+    // Set Security Realms
+    if(!(jenkins.getSecurityRealm() instanceof HudsonPrivateSecurityRealm))
+        jenkins.setSecurityRealm(new HudsonPrivateSecurityRealm(false))
+
+    if(!(jenkins.getAuthorizationStrategy() instanceof GlobalMatrixAuthorizationStrategy))
+        jenkins.setAuthorizationStrategy(new GlobalMatrixAuthorizationStrategy())
+
+    // Create User
+    logger.info("Creating Default Admin User")
+    def user = jenkins.getSecurityRealm().createAccount(env.JENKINS_USER, env.JENKINS_PASSWORD)
+    user.save()
+
+    // Set User as Jenkins Administrator
+    jenkins.getAuthorizationStrategy().add(Jenkins.ADMINISTER, env.JENKINS_USER)
+    jenkins.save()
+}
+

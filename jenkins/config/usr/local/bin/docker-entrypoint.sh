@@ -37,7 +37,7 @@ configure() {
 
   if [ ! -e $LOCKFILE ]; then
 
-    log "Configuring Jenkins"
+    log "Configuring Jenkins Projects"
 
     [[ -z "$GITHUB_ID" ]] && { echo "Error: GITHUB_ID not found"; exit 1; }
     
@@ -70,9 +70,9 @@ configure() {
     # Set the lock
     touch $LOCKFILE
 
-    log "Jenkins configured"
+    log "Jenkins Projects configured"
   else
-		log "Jenkins already configured"
+		log "Jenkins Projects already configured"
 	fi
 	return 0
 

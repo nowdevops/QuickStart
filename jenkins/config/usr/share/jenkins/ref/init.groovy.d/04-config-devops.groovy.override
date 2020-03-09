@@ -9,7 +9,7 @@ def env = System.getenv()
 Logger logger = Logger.getLogger("ConfigDevOps")
 
 // Set Lock file
-def lockFile = new File(env.JENKINS_HOME+'/configured.lock')
+def lockFile = new File(env.JENKINS_HOME+'/config-devops.lock')
 
 if (lockFile.exists()) {
 
@@ -43,5 +43,8 @@ if (lockFile.exists()) {
     logger.info("Saving Jenkins Configuration")
     devops.save()
     jenkins.save()
+
+    // Save the Lock
+    lockFile.createNewFile()    
 
 }

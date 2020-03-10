@@ -94,6 +94,8 @@ Before you can deploy QuickStart Containers the OKD administrator needs to perfo
     -p TOMCAT_PASSWORD=changeit \
     -p JENKINS_USER=admin \
     -p JENKINS_PASSWORD=changeit \
+    -p NOW_URL="https://devopspoc.service-now.com/" \
+    -p NOW_TOOLID=changeit \
     -l app=creditsuisse
     ```
 

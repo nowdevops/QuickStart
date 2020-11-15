@@ -2,11 +2,19 @@
 #                                Jenkins Container                             #
 ################################################################################
 
-FROM jenkins/jenkins:lts-centos
+  
+FROM jenkins/jenkins:alpine
 LABEL maintainer="TRITON <ITX-NOW@servicenow.onmicrosoft.com>"
+
+ENV JENKINS_USER admin
+ENV JENKINS_PASS admin
+
 
 # Run as root
 USER root
+
+# Skip initial setup
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
 # Copy Jenkins files to contaner
 COPY jenkins/config/ /
@@ -25,9 +33,6 @@ ENV JENKINS_VERSION ${JENKINS_VERSION}
 
 # Configure Jenkins Plugins
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
-
-# Don't run the Jenkins Wizard
-ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
 # Set Jenkins Permissions
 RUN \

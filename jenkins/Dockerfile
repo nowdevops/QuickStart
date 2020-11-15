@@ -7,7 +7,7 @@ FROM jenkins/jenkins:alpine
 LABEL maintainer="TRITON <ITX-NOW@servicenow.onmicrosoft.com>"
 
 ENV JENKINS_USER admin
-ENV JENKINS_PASS admin
+ENV JENKINS_PASSWORD admin
 
 
 # Run as root

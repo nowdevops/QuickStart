@@ -32,52 +32,7 @@ CLI_DELAY=0
 log() {
   echo "[$(date --rfc-3339=seconds)]: $*"
 }
-
-configure() {
-
-  if [ ! -e $LOCKFILE ]; then
-
-    log "Configuring Jenkins Projects"
-
-    [[ -z "$GITHUB_ID" ]] && { echo "Error: GITHUB_ID not found"; exit 1; }
-    
-    # Run sed to repace GitHub Username
-    sed -i -e "s#GITHUBUSERNAME#$GITHUB_ID#g" $JENKINS_JOBS/*.xml
-
-    # Run sed to repace Tomcat URL
-    sed -i -e "s#CUSTOMERID#$CUSTOMER_ID#g" $JENKINS_JOBS/*.xml
-
-     # Job 1
-    JOB_NAME=CorpSite-CI
-    JOB_FILE=CorpSiteCI.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
-
-    # Job 2
-    JOB_NAME=CorpSite-UAT-deploy
-    JOB_FILE=CorpSiteUATdeploy.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
-
-    # Job 3
-    JOB_NAME=CorpSite-UAT-test
-    JOB_FILE=CorpSiteUATtest.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
-
-    # Job 4
-    JOB_NAME=CorpSite-PROD-deploy
-    JOB_FILE=CorpSitePRODdeploy.xml
-    mkdir $JENKINS_JOBS/$JOB_NAME; cp $JENKINS_JOBS/$JOB_FILE $JENKINS_JOBS/$JOB_NAME/config.xml
-
-    # Set the lock
-    touch $LOCKFILE
-
-    log "Jenkins Projects configured"
-  else
-		log "Jenkins Projects already configured"
-	fi
-	return 0
-
-}  
-
+  
 startall() {
 	log "Starting Jenkins with a $CLI_DELAY sec delay"
 	delay $CLI_DELAY

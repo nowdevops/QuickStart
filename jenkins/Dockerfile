@@ -3,7 +3,7 @@
 ################################################################################
 
   
-FROM jenkins/jenkins:alpine
+FROM jenkins/jenkins:lts-centos
 LABEL maintainer="TRITON <ITX-NOW@servicenow.onmicrosoft.com>"
 
 ENV JENKINS_USER admin
@@ -25,7 +25,7 @@ ENV JENKINS_JOBS $JENKINS_SHARE/ref/jobs
 
 # Install Yum Tools
 RUN \
-  yum install -y --nogpgcheck wget zip htop
+  yum install -y --nogpgcheck wget zip
 
 # Declare Jenkins Build Args
 ARG JENKINS_VERSION

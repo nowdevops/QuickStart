@@ -17,7 +17,7 @@ USER root
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
 # Copy Jenkins files to contaner
-COPY jenkins/config/ /
+COPY ./config/ /
 
 # Set enviroment
 ENV JENKINS_SHARE /usr/share/jenkins

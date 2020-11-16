@@ -43,7 +43,7 @@ RUN \
 EXPOSE 8080 50000
 
 # Create Volumes
-VOLUME ["$JENKINS_HOME"]
+# VOLUME ["$JENKINS_HOME"]
 
 # Configure Docker entry point script
 CMD ["docker-entrypoint.sh","start"]

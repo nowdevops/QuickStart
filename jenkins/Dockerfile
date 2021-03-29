@@ -25,7 +25,7 @@ ENV JENKINS_JOBS $JENKINS_SHARE/ref/jobs
 
 # Install Yum Tools
 RUN \
-  yum install -y --nogpgcheck wget zip
+  yum install -y --nogpgcheck wget zip python3
 
 # Declare Jenkins Build Args
 ARG JENKINS_VERSION
